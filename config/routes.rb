@@ -1,4 +1,10 @@
 Chalk::Application.routes.draw do
+  resources :tags
+
+  resources :answers
+
+  resources :questions
+
   resources :users
 
   # The priority is based upon order of creation:
