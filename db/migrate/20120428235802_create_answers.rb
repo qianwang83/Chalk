@@ -4,7 +4,7 @@ class CreateAnswers < ActiveRecord::Migration
       t.string :title
       t.string :description
       t.datetime :timestamp
-      t.int :vote_count
+      t.integer :vote_count
 
       t.timestamps
     end

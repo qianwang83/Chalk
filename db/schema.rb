@@ -11,7 +11,25 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120428212150) do
+ActiveRecord::Schema.define(:version => 20120429000802) do
+
+  create_table "answers", :force => true do |t|
+    t.string   "title"
+    t.string   "description"
+    t.datetime "timestamp"
+    t.integer  "vote_count"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+  end
+
+  create_table "questions", :force => true do |t|
+    t.integer  "category"
+    t.string   "title"
+    t.string   "description"
+    t.datetime "timestamp"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+  end
 
   create_table "sessions", :force => true do |t|
     t.string   "session_id", :null => false
@@ -22,5 +40,21 @@ ActiveRecord::Schema.define(:version => 20120428212150) do
 
   add_index "sessions", ["session_id"], :name => "index_sessions_on_session_id"
   add_index "sessions", ["updated_at"], :name => "index_sessions_on_updated_at"
+
+  create_table "tags", :force => true do |t|
+    t.string   "name"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "users", :force => true do |t|
+    t.string   "acct_type"
+    t.string   "name"
+    t.string   "email"
+    t.string   "title"
+    t.integer  "school_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
 
 end
